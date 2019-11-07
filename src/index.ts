@@ -1,20 +1,29 @@
-import {hexToDec} from './hex2dec';
-
+export interface FlakeIDParams {
+  seq?: number,
+  mid?: number,
+  timeOffset?: number
+  lastTime?: number
+}
 export default class FlakeId {
-  constructor(options) {
-    options = options || {};
-    this.seq = 0;
-    this.mid = (options.mid || 1) % 1023;
-    this.timeOffset = options.timeOffset || 0;
-    this.lastTime = 0;
+  public seq: number
+  public mid: number
+  public timeOffset: number
+  public lastTime: number
+
+  constructor({ seq = 0, mid = 1, timeOffset = 0, lastTime = 0 }: FlakeIDParams = {}) {
+    this.seq = seq
+    this.mid = mid % 1023;
+    this.timeOffset = timeOffset;
+    this.lastTime = lastTime;
   }
+
   gen() {
     const time = Date.now(),
     bTime = (time - this.timeOffset).toString(2);
 
     //get the sequence number
     if (this.lastTime == time) {
-      this.seq++;
+      this.seq += 1;
 
       if (this.seq > 4095) {
         this.seq = 0;
@@ -29,7 +38,7 @@ export default class FlakeId {
     this.lastTime = time;
 
     let bSeq = this.seq.toString(2),
-      bMid = this.mid.toString(2);
+        bMid = this.mid.toString(2);
 
     //create sequence binary bit
     while (bSeq.length < 12) bSeq = "0" + bSeq;
@@ -43,6 +52,6 @@ export default class FlakeId {
       id = parseInt(bid.substring(i - 4, i), 2).toString(16) + id;
     }
 
-    return hexToDec(id);
+    return BigInt(`0x${id}`);
   }
 }

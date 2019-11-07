@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2019",
+    "module": "esnext",
+    "experimentalDecorators": true,
+    "preserveConstEnums": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "strictNullChecks": true,
+
+    "lib": [ "esnext" ],
+
+    "declaration": true,
+    "sourceMap": true,
+    "declarationMap": true,
+
+    "outDir": "lib"
+  },
+  "exclude": ["./**/node_modules"],
+  "include": ["src/**/*.ts"]
+}

@@ -3,36 +3,23 @@ A tiny module to generate time based 64-bit unique id, inspired by Twitter id (s
 
 FlakeId takes 42 bit of timestamp, 10 bit of machine id (or any random number you provide), 12 bit of sequence number .  As javascript is limited to 53 bit integer precision, FlakeId generates id in string format like "285124269753503744", which can be easily type casted into 64 bit bigint in database.
 
-# Installation
-
-For Node
-```js
-npm install flakeid
-```
-
-For Browser
-Include js file
-```html
-<script src="https://unpkg.com/flakeid/dist/flakeid.min.js"></script>
-```
-
 # Usage
 Initializtion
 ```js
-const FlakeId = require('flakeid'); /* on node js only */
+import flakeid from '@brecert/flakeid'
 
-//initiate flake
+// initiate flake
 const flake = new FlakeId({
-	mid : 42, //optional, define machine id
-    timeOffset : (2013-1970)*31536000*1000 //optional, define a offset time
+	mid : 42, // optional, define machine id
+    timeOffset : (2013-1970)*31536000*1000 // optional, define a offset time
 });
 ```
 Create a instance of flake as shown above which will be used to generate flake ids afterward.
 
 Id generation
 ```js
-const id1 = flake.gen(); \\returns something like 285124269753503744
-const id2 = flake.gen(); \\returns something like 285124417543999488
+const id1 = flake.gen(); \\ returns something like 285124269753503744
+const id2 = flake.gen(); \\ returns something like 285124417543999488
 ```
 
 # Options
@@ -43,7 +30,3 @@ timeOffset : (Defaults to 0) Time offset will be  subtracted from current time t
 
 # Method
 gen : Method to generate id from FlakeId instance.
-
-------
-As js have 53bit integer precision, Flake Id uses a smart solution by Dan Vanderkam (http://www.danvk.org/hex2dec.html) to convert hex to decimal without loosing precision. 
-*Source code for converting hex to decimal is taken from http://www.danvk.org/hex2dec.html which have APACHE LICENCE*
