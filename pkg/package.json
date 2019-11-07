@@ -31,7 +31,6 @@
     "type": "git",
     "url": "git+https://github.com/Brecert/FlakeId.git"
   },
-  "dependencies": {},
   "devDependencies": {
     "@pika/cli": "^0.2.0",
     "@pika/plugin-build-node": "^0.7.1",
