@@ -19,8 +19,8 @@ Create a instance of flake as shown above which will be used to generate flake i
 
 Id generation
 ```js
-const id1 = flake.gen(); \\ returns something like 285124269753503744n
-const id2 = flake.gen(); \\ returns something like 285124417543999488n
+const id1 = flake.gen(); // returns something like 285124269753503744n
+const id2 = flake.gen(); // returns something like 285124417543999488n
 ```
 
 # Options
