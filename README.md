@@ -29,9 +29,12 @@ const id2 = flake.gen(); // returns something like 285124417543999488n
 
 A machine id or any random id. If you are generating id in distributed system, its highly advised to provide a proper mid which is unique to different machines.
 
+
 `timeOffset: number = 0`
+
 Time offset will be  subtracted from current time to get the first 42 bit of id. This help in generating smaller ids.
 
 # Methods
 `gen(): BigInt`
+
 Method to generate id from FlakeId instance.
