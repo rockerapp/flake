@@ -1,7 +1,8 @@
 # FlakeId
 A tiny module to generate time based 64-bit unique id, inspired by Twitter id (snowflake).
 
-FlakeId takes 42 bit of timestamp, 10 bit of machine id (or any random number you provide), 12 bit of sequence number .  As javascript is limited to 53 bit integer precision, FlakeId generates id in string format like "285124269753503744", which can be easily type casted into 64 bit bigint in database.
+FlakeId takes 42 bit of timestamp, 10 bit of machine id (or any random number you provide), 12 bit of sequence number.
+As javascript is limited to 53 bit integer precision, FlakeId generates a [BigInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) id like `285124269753503744n`, which can be easily be type casted into a 64 bit bigint in a database.
 
 # Usage
 Initializtion
@@ -31,5 +32,6 @@ A machine id or any random id. If you are generating id in distributed system, i
 `timeOffset: number = 0`
 Time offset will be  subtracted from current time to get the first 42 bit of id. This help in generating smaller ids.
 
-# Method
-gen : Method to generate id from FlakeId instance.
+# Methods
+`gen(): BigInt`
+Method to generate id from FlakeId instance.
