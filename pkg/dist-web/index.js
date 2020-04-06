@@ -7,7 +7,7 @@ class FlakeId {
     }
     gen() {
         const time = Date.now(), bTime = (time - this.timeOffset).toString(2);
-        //get the sequence number
+        // get the sequence number
         if (this.lastTime == time) {
             this.seq += 1;
             if (this.seq > 4095) {
@@ -18,12 +18,9 @@ class FlakeId {
             this.seq = 0;
         }
         this.lastTime = time;
-        let bSeq = this.seq.toString(2), bMid = this.mid.toString(2);
-        //create sequence binary bit
-        while (bSeq.length < 12)
-            bSeq = "0" + bSeq;
-        while (bMid.length < 10)
-            bMid = "0" + bMid;
+        // make sure sequence length will be constant
+        const bSeq = this.seq.toString(2).padStart(12, "0");
+        const bMid = this.mid.toString(2).padStart(10, "0");
         const bid = bTime + bMid + bSeq;
         let id = "";
         for (let i = bid.length; i > 0; i -= 4) {
