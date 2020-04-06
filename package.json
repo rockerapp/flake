@@ -1,6 +1,6 @@
 {
   "name": "@brecert/flakeid",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Time based 64-bit unique id generator, inspired by Twitter id (snowflake)",
   "repository": {
     "type": "git",
