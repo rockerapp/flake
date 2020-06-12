@@ -3,8 +3,7 @@
 	"version": "2.1.1",
 	"description": "Time-based, unique 64-bit ID generator, inspired by Twitter's Snowflake system",
 	"scripts": {
-		"build": "tsc",
-		"test": "exit 0"
+		"build": "tsc"
 	},
 	"license": "MIT",
 	"devDependencies": {
@@ -20,14 +19,13 @@
 		"preview": false,
 		"tag": "latest",
 		"yarn": true,
-		"contents": "dist",
 		"releaseDraft": true
 	},
 	"publishConfig": {
 		"registry": "https://npm.pkg.github.com/"
 	},
 	"files": [
-		"dist/**/*"
+		"dist/**/*.ts"
 	],
 	"keywords": [
 		"snowflake",
