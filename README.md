@@ -33,7 +33,7 @@ const id2 = flake.generate() // returns something like 285124417543999488n
 
 ## Options
 
-**`nodeId`** (number, default: `0`)
+**`nodeId`** (number, default: `1`)
 
 A machine ID or any random number. If you are generating IDs on multiple nodes, it's highly advised to pass a proper node ID that is unique to the machine.
 
@@ -45,7 +45,13 @@ Time to be subtracted from current timestamp (based on the Unix epoch) to determ
 
 ## Functions
 
-**`generate()`** (BigInt)
+**`generate()`** (string)
+
+Returns a stringified **`generateRaw()`** output.
+
+---
+
+**`generateRaw()`** (BigInt)
 
 Generates an ID based on the options passed to the Flake instance.
 
