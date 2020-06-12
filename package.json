@@ -1,10 +1,14 @@
 {
 	"name": "@rockerapp/flake",
-	"version": "2.1.2",
-	"description": "Time-based, unique 64-bit ID generator, inspired by Twitter's Snowflake system",
+	"version": "2.1.0",
+	"description": "Time-based, unique 64-bit ID generator, inspired by Twitter's Snowflake",
 	"scripts": {
 		"build": "tsc"
 	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"main": "dist/index.js",
 	"license": "MIT",
 	"devDependencies": {
 		"np": "^6.2.4",
@@ -21,11 +25,10 @@
 		"yarn": true,
 		"releaseDraft": true
 	},
-	"publishConfig": {
-		"registry": "https://npm.pkg.github.com/"
-	},
 	"files": [
-		"dist/**/*.ts"
+		"/dist/**/*",
+		"/LICENSE",
+		"/package.json"
 	],
 	"keywords": [
 		"snowflake",
