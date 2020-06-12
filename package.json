@@ -1,6 +1,6 @@
 {
 	"name": "@rockerapp/flake",
-	"version": "2.1.1",
+	"version": "2.1.2",
 	"description": "Time-based, unique 64-bit ID generator, inspired by Twitter's Snowflake system",
 	"scripts": {
 		"build": "tsc"
