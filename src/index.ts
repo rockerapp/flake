@@ -4,7 +4,7 @@ export interface FlakeOptions {
 	 */
 	nodeId?: number
 	/**
-	 * Time, in milliseconds, to subtract from current time during ID generation. Based on Unix epoch.
+	 * Time, in milliseconds, to use as a custom epoch. Added to UNIX epoch (January 1, 1970).
 	 */
 	timeOffset?: number
 }

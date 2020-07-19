@@ -19,7 +19,7 @@ import Flake from '@rockerapp/flake'
 // all settings are optional
 const flake = new Flake({
 	nodeId: 42, // optional, define machine ID
-	timeOffset: (2020-1970)*31536000*1000 // optional, define a time offset
+	timeOffset: 1593561600 * 1000 // optional, define a time offset (in milliseconds)
 })
 ```
 
@@ -41,7 +41,7 @@ A machine ID or any random number. If you are generating IDs on multiple nodes, 
 
 **`timeOffset`** (number, default: `0`)
 
-Time to be subtracted from current timestamp (based on the Unix epoch) to determine the first 42 bits of ID.
+Time to be subtracted from the current time, **in milliseconds**. Effectively creates a custom start time for ID generation.
 
 ## Functions
 
