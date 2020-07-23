@@ -27,8 +27,8 @@ Create a instance of Flake as shown above, which will be used to generate IDs af
 
 ### Generate ID
 ```js
-const id1 = flake.generate() // returns something like 285124269753503744n
-const id2 = flake.generate() // returns something like 285124417543999488n
+const id1 = flake.generate()    // returns something like '285124269753503744'
+const id2 = flake.generateRaw() // returns something like 285124417543999488n (of type BigInt)
 ```
 
 ## Options
