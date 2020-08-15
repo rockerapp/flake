@@ -25,6 +25,8 @@ export default class Flake {
 		const nowTime = Date.now()
 		const genTime = (nowTime - this.timeOffset).toString(2)
 
+		this.sequence = 0
+		
 		// set sequence number
 		// this prevents multiple IDs from being generated in 1ms
 		if (this.lastTime === nowTime) {
@@ -36,8 +38,6 @@ export default class Flake {
 				// wait until time has incremented by a millisecond
 				while (Date.now() <= nowTime) { }
 			}
-		} else {
-			this.sequence = 0
 		}
 
 		this.lastTime = nowTime
