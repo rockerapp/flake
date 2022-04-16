@@ -2,6 +2,9 @@ node_modules
 
 bin
 dist
+target
 
-yarn.lock
 *.log
+
+index.node
+.DS_Store
